@@ -1,0 +1,80 @@
+.aimFrame,
+.reticle,
+.ghost {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.aimFrame {
+  z-index: 10002;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transition: opacity 140ms ease;
+  background: linear-gradient(#111, #111) top left / var(--corner, 13px) 2px no-repeat, linear-gradient(#111, #111) top left / 2px var(--corner, 13px) no-repeat, linear-gradient(#111, #111) top right / var(--corner, 13px) 2px no-repeat, linear-gradient(#111, #111) top right / 2px var(--corner, 13px) no-repeat, linear-gradient(#111, #111) bottom left / var(--corner, 13px) 2px no-repeat, linear-gradient(#111, #111) bottom left / 2px var(--corner, 13px) no-repeat, linear-gradient(#111, #111) bottom right / var(--corner, 13px) 2px no-repeat, linear-gradient(#111, #111) bottom right / 2px var(--corner, 13px) no-repeat;
+  will-change: transform, width, height;
+}
+
+.aimFrame[data-locked='true'] {
+  opacity: 1;
+}
+
+.aimFrame[data-contrast='light'] {
+  background: linear-gradient(#fff, #fff) top left / var(--corner, 13px) 2px no-repeat, linear-gradient(#fff, #fff) top left / 2px var(--corner, 13px) no-repeat, linear-gradient(#fff, #fff) top right / var(--corner, 13px) 2px no-repeat, linear-gradient(#fff, #fff) top right / 2px var(--corner, 13px) no-repeat, linear-gradient(#fff, #fff) bottom left / var(--corner, 13px) 2px no-repeat, linear-gradient(#fff, #fff) bottom left / 2px var(--corner, 13px) no-repeat, linear-gradient(#fff, #fff) bottom right / var(--corner, 13px) 2px no-repeat, linear-gradient(#fff, #fff) bottom right / 2px var(--corner, 13px) no-repeat;
+}
+
+.reticle {
+  z-index: 10001;
+  width: 34px;
+  height: 34px;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 130ms ease;
+  /* The free spinning cursor remains legible on both canvas colours. */
+  mix-blend-mode: difference;
+  will-change: left, top, opacity;
+}
+
+.reticle[data-visible='true'][data-locked='false'] {
+  opacity: 1;
+}
+
+.reticleShape {
+  position: absolute;
+  inset: 0;
+  display: block;
+  transform: rotate(var(--reticle-angle, 0deg));
+  transform-origin: center;
+  background: linear-gradient(#fff, #fff) top left / 10px 1.5px no-repeat, linear-gradient(#fff, #fff) top left / 1.5px 10px no-repeat, linear-gradient(#fff, #fff) top right / 10px 1.5px no-repeat, linear-gradient(#fff, #fff) top right / 1.5px 10px no-repeat, linear-gradient(#fff, #fff) bottom left / 10px 1.5px no-repeat, linear-gradient(#fff, #fff) bottom left / 1.5px 10px no-repeat, linear-gradient(#fff, #fff) bottom right / 10px 1.5px no-repeat, linear-gradient(#fff, #fff) bottom right / 1.5px 10px no-repeat;
+}
+
+.reticle[data-contrast='light'] .reticleShape { background: linear-gradient(#fff, #fff) top left / 10px 1.5px no-repeat, linear-gradient(#fff, #fff) top left / 1.5px 10px no-repeat, linear-gradient(#fff, #fff) top right / 10px 1.5px no-repeat, linear-gradient(#fff, #fff) top right / 1.5px 10px no-repeat, linear-gradient(#fff, #fff) bottom left / 10px 1.5px no-repeat, linear-gradient(#fff, #fff) bottom left / 1.5px 10px no-repeat, linear-gradient(#fff, #fff) bottom right / 10px 1.5px no-repeat, linear-gradient(#fff, #fff) bottom right / 1.5px 10px no-repeat; }
+
+.ghost {
+  z-index: 10003;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 130ms ease;
+  mix-blend-mode: difference;
+  will-change: top, left;
+}
+
+.ghost[data-visible='true'] {
+  opacity: 0.32;
+}
+
+.ghost[data-contrast='light'] { background: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reticle,
+  .aimFrame,
+  .ghost {
+    display: none;
+  }
+}

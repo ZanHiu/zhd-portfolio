@@ -1,0 +1,68 @@
+.loader {
+  position: fixed;
+  z-index: 900;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #e6e7e5;
+  opacity: 1;
+  transition: opacity 700ms ease, visibility 700ms ease;
+}
+
+.loaderDone {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.greetingSlot {
+  display: flex;
+  width: min(90vw, 1080px);
+  height: clamp(75px, 9vw, 140px);
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  overflow: hidden;
+  color: #51534e;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.greetingWord {
+  min-width: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(38px, 5.5vw, 90px);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+  text-align: center;
+  animation: greeting-enter 120ms ease-out both;
+}
+
+.greetingDot {
+  flex: none;
+  font-size: clamp(26px, 3vw, 55px);
+}
+
+.loaderRule {
+  width: 190px;
+  height: 1px;
+  margin-top: 22px;
+  background: linear-gradient(90deg, #202220 0 100%) no-repeat, #d7d9d5;
+  background-size: 0 100%;
+  animation: loader-progress 2.3s ease-in-out forwards;
+}
+
+@keyframes greeting-enter {
+  from { opacity: 0; transform: translateY(11px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes loader-progress {
+  to { background-size: 100% 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader { display: none; }
+}
