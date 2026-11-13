@@ -1,0 +1,25 @@
+node_modules/
+dist/
+coverage/
+.npm-cache/
+.vite/
+*.tsbuildinfo
+
+# Local configuration and secrets. Commit a redacted .env.example only.
+.env
+.env.*
+!.env.example
+
+# Private baseline materials and local visual evidence may contain CV/contact data.
+reference/
+# Local-review documents are private and must never enter repository history.
+public/documents/
+docs/phase-*-screenshots/
+docs/phase-*-reference/
+docs/phase-*-react/
+docs/phase-*-diffs/
+docs/phase-*-recording/
+docs/repository-restructure-screenshots/
+docs/content-frame-hotfix/
+docs/visual-fidelity/
+docs/home-visual/
