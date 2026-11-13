@@ -1,0 +1,54 @@
+:root {
+  --color-paper: #e8e9e7;
+  --color-ink: #111212;
+  --color-line: #b9bcba;
+  --color-dot: #bdc0be;
+  --color-curve: #828682;
+  --color-muted: #737672;
+  --color-muted-strong: #626560;
+  --color-nav-muted: #878984;
+  --color-footer-accent: #626560;
+  --color-action-bg: #111212;
+  --color-action-fg: #fff;
+  --color-action-hover: #454743;
+  --transition-bg: #121413;
+  --transition-grid: #343937;
+  --transition-dot: #626862;
+  --transition-ink: #f0f0ee;
+  --transition-muted: #999;
+  --font-sans: "Inter", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", Courier, monospace;
+  --dot-size: 21px;
+  --frame-inset: 12px;
+  --header-height: 64px;
+  --header-padding: 36px;
+  --sidebar-width: 195px;
+  --main-top: calc(var(--frame-inset) + var(--header-height));
+  --main-left: calc(var(--frame-inset) + var(--sidebar-width));
+  --radius-frame: 18px;
+  --footer-height: 36px;
+  /* The frame is the sole owner of the rounded outer boundary. It must paint
+     above opaque chrome surfaces so no segment is visually occluded. */
+  --z-frame: 3;
+  --z-chrome: 2;
+}
+
+:root[data-theme='dark'] {
+  --color-paper: #181a19;
+  --color-ink: #f1f2ee;
+  --color-line: #4b504c;
+  --color-dot: #565b56;
+  --color-curve: #a4aaa4;
+  --color-muted: #abb1aa;
+  --color-muted-strong: #c6ccc5;
+  --color-nav-muted: #9ba19a;
+  --color-footer-accent: #d3d8d2;
+  --color-action-bg: #f1f2ee;
+  --color-action-fg: #111212;
+  --color-action-hover: #c7cbc6;
+  --transition-bg: #f1f2ee;
+  --transition-grid: #c0c5bf;
+  --transition-dot: #7d847c;
+  --transition-ink: #111212;
+  --transition-muted: #626560;
+}
