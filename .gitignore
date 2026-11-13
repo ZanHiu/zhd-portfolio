@@ -12,8 +12,6 @@ coverage/
 
 # Private baseline materials and local visual evidence may contain CV/contact data.
 reference/
-# Local-review documents are private and must never enter repository history.
-public/documents/
 docs/phase-*-screenshots/
 docs/phase-*-reference/
 docs/phase-*-react/
