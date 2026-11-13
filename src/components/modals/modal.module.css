@@ -1,0 +1,34 @@
+.modal { position: fixed; z-index: 8000; inset: 0; display: grid; place-items: center; padding: 28px; background: rgb(20 21 19 / 65%); backdrop-filter: blur(3px); }
+.window { display: flex; width: min(1120px, 82vw); height: min(760px, 82vh); flex-direction: column; border: 1px solid #c9ccca; background: #eceeec; box-shadow: 0 25px 100px #0006; }
+.window[data-expanded='true'] { width: calc(100vw - 55px); height: calc(100vh - 55px); }
+.topbar, .bottom { display: flex; height: 64px; flex: none; align-items: center; justify-content: space-between; padding: 0 24px; background: #e9ebe9; color: var(--color-ink); font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.topbar { border-bottom: 1px solid var(--color-line); }
+.headerActions { display: flex; align-items: center; gap: 6px; }
+.headerActions button { display: grid; width: 40px; height: 40px; padding: 0; place-items: center; border: 1px solid #afb3b0; background: #eceeec; color: var(--color-ink); font-size: 19px; transition: background-color 150ms ease, color 150ms ease; }
+.headerActions button:hover { background: var(--color-action-bg); color: var(--color-action-fg); }
+.headerActions button svg { width: 19px; height: 19px; }
+.content { display: flex; min-height: 0; flex: 1; flex-direction: column; background: repeating-linear-gradient(130deg, #e9eae8 0 1px, #f1f2f0 1px 16px); }
+.toolbar { display: flex; height: 51px; flex: none; align-items: center; justify-content: space-between; gap: 12px; padding: 0 20px; border-bottom: 1px solid #c5c8c5; background: #e8eae8; font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: .08em; }
+.tools { display: flex; align-items: center; gap: 3px; }
+.tools button { display: grid; width: 38px; height: 35px; padding: 0; place-items: center; border: 1px solid #b5b7b5; background: #e9ebe9; color: var(--color-ink); font-size: 17px; }
+.tools button:hover:not(:disabled) { background: var(--color-action-bg); color: var(--color-action-fg); }
+.tools button:disabled { opacity: .38; }
+.tools button svg { width: 17px; height: 17px; }
+.tools output { min-width: 58px; text-align: center; }
+.stage { min-height: 0; flex: 1; overflow: auto; overscroll-behavior: contain; padding: 20px 35px; background: #252525; }
+.visualStage { display: grid; place-items: center; padding: clamp(18px, 4vw, 55px); background: repeating-linear-gradient(130deg, #e9eae8 0 1px, #f1f2f0 1px 16px); }
+.visualPreview { width: min(820px, 100%); height: min(440px, 100%); min-height: 220px; }
+.visualPreview > * { width: 100%; height: 100%; min-height: 220px; }
+.visualImage { display: block; width: 100%; height: 100%; min-height: 220px; object-fit: contain; background: white; }
+.document { min-height: max-content; margin: 0 auto; padding: clamp(28px, 5vw, 74px); background: #fff; box-shadow: 0 2px 18px #0006; color: #171815; transform-origin: top center; transition: width 160ms ease; }
+.pdfPreview { position: relative; display: grid; width: max-content; min-width: min(100%, 360px); min-height: 540px; place-items: center; margin: 0 auto; background: #fff; box-shadow: 0 2px 18px #0006; }
+.pdfCanvas { display: block; max-width: 100%; height: auto; background: #fff; }
+.pdfStatus { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; background: #252525; color: white; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.pdfPageCount { position: absolute; right: 12px; bottom: 12px; padding: 5px 7px; background: rgb(18 18 18 / 88%); color: white; font-family: var(--font-mono); font-size: 8px; letter-spacing: .08em; }
+.documentKicker { color: #858880 !important; font-family: var(--font-mono); font-size: 10px !important; font-weight: 700; letter-spacing: .1em; }
+.document h2 { margin: 24px 0; font-size: clamp(31px, 4vw, 54px); letter-spacing: -.06em; }
+.document p { max-width: 700px; color: #656963; font-size: 15px; line-height: 1.65; }
+.bottom { height: 63px; border-top: 1px solid var(--color-line); }
+.bottom i { margin-left: 22px; color: var(--color-muted); font-style: normal; }
+.bottom a { display: inline-flex; align-items: center; gap: 7px; padding: 13px 18px; background: var(--color-action-bg); color: var(--color-action-fg); font-size: 10px; }.bottom a svg { width: 14px; height: 14px; }
+@media (max-width: 850px) { .modal { padding: 12px; } .window, .window[data-expanded='true'] { width: 95vw; height: 88vh; } .topbar, .bottom { height: 54px; padding: 0 12px; } .stage { padding: 10px; } .document { width: 100% !important; } .bottom i { display: none; } }

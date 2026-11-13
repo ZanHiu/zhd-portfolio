@@ -1,0 +1,8 @@
+export interface CredentialRecord { id: string; number: string; category: 'WORK' | 'EDUCATION' | 'LOCAL REVIEW'; title: string; summary: string; documentLabel: string; details: readonly string[]; assetUrl?: string; fileName?: string }
+
+export const credentials: readonly CredentialRecord[] = [
+  { id: 'emvide-experience', number: '01', category: 'WORK', title: 'Emvide / Riskoa Ltd', summary: 'Frontend Developer · Aug 2025 — Oct 2026', documentLabel: 'EMVIDE / RISKOA LTD', details: ['Frontend Developer in a UK remote team.', 'B2B SaaS platform for Life Cycle Assessment and carbon-footprint analysis.', 'CV-supported local-review record; not an official certificate image.'] },
+  { id: 'uit-education', number: '02', category: 'EDUCATION', title: 'University of Information Technology', summary: 'Artificial Intelligence · Jul 2026 — Present', documentLabel: 'UIT / ARTIFICIAL INTELLIGENCE', details: ['University of Information Technology (UIT).', 'Artificial Intelligence · Jul 2026 — Present.', 'CV-supported local-review record; not an official certificate image.'] },
+  { id: 'fpt-education', number: '03', category: 'EDUCATION', title: 'FPT Polytechnic College', summary: 'Web Development · GPA 3.6/4.0', documentLabel: 'FPT POLYTECHNIC / WEB DEVELOPMENT', details: ['FPT Polytechnic College.', 'Web Development · Aug 2023 — Aug 2025 · GPA 3.6/4.0.', 'CV-supported local-review record; not an official certificate image.'] },
+  { id: 'local-review-profile', number: '04', category: 'LOCAL REVIEW', title: 'Nguyen Van Hieu Resume', summary: 'Official resume PDF', documentLabel: 'NGUYEN VAN HIEU / RESUME', details: ['Official resume PDF supplied by the portfolio owner.'], assetUrl: '/documents/CV_NguyenVanHieu.pdf', fileName: 'CV_NguyenVanHieu.pdf' },
+] as const
